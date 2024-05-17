@@ -1,12 +1,14 @@
-/*h2,h3,h4,h5の先頭には、ユニコーンのマークがつく*/
+/*h2の先頭には、ユニコーンのマークがつく*/
 
 @font-face {
   font-family: 'FantasticCreatures';
   src: url('https://hashsan.github.io/comad/FantasticCreatures.ttf') format('truetype');
 }
 
+/*h2だけの方が上質*/
+/*h2::before,h3::before,h4::before,h5::before{*/
 
-h2::before,h3::before,h4::before,h5::before{
+h2::before{  
   font-family:FantasticCreatures;
   content:'v';
   padding-right:0.75rem;
