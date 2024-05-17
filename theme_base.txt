@@ -1,4 +1,6 @@
 -- functions.php --
+<?php
+
 function theme_widgets_init() {
     register_sidebar( array(
         'name' => __( 'Main Widget Area', 'text_domain' ),
