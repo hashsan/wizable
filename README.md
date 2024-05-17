@@ -1,0 +1,2 @@
+# wizable
+wizable is theme
