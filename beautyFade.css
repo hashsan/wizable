@@ -1,0 +1,17 @@
+/*
+注意として、opacityが最終的に１になる。０．５など指定していても。
+*/
+
+body * {
+  opacity: 0;
+  animation: fade 1s forwards;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
