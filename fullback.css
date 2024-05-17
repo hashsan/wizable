@@ -1,0 +1,19 @@
+/*
+with fullback.js
+*/
+#fullback{
+  position:fixed;
+  z-index:-10;
+  width:100vw;
+  height:100vh;
+  top:0;left:0;
+
+  filter:brightness(0.5);
+  display:none;
+  object-fit:contain;
+
+}
+
+#fullback[src]{
+  display:block;
+}
