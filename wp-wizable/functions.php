@@ -1,3 +1,4 @@
+<?php
 
 function theme_widgets_init() {
     register_sidebar( array(
