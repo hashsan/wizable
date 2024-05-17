@@ -13,11 +13,14 @@ $category = get_the_category();
 if (!empty($category)) {
     $category = esc_html($category[0]->name);
 } else {
-    $category = '';
+	$category = esc_html('サイトマップ');//
 }
 
 // ホームURLの取得
 $home = esc_url(home_url('/'));
+
+$author = get_the_author_meta('display_name') ?: 'HOJO Kita';
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -26,24 +29,32 @@ $home = esc_url(home_url('/'));
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $meta_title; ?></title>
     <meta name="description" content="<?php echo $meta_description; ?>">
-    <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
     <?php wp_head(); ?>
+	
+    <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
+	
 </head>
 <body <?php body_class(); ?>>
     <header>
-        <nav>
-            <a class="home" href="<?php echo $home; ?>"><?php bloginfo('name'); ?></a>
+		
+        <nav class="row small">
+			<label>PR</label>
+            <a class="home" href="<?php echo $home; ?>"><?php bloginfo('name'); ?></a>						
             <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'privacy-policy' ) ) ); ?>">Privacy Policy</a>
             <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'terms-of-rule' ) ) ); ?>">Terms of Rule</a>
-            <a class="contact" href="mailto:hojo.kita@gmail.com?subject=<?php echo urlencode(get_bloginfo('name') . 'へのお問い合わせ'); ?>&body=<?php echo urlencode('内容は端的にお願い致します'); ?>">Contact</a>
+            <a class="contact" href="mailto:hojo.kita@gmail.com?subject=<?php echo urlencode(get_bloginfo('name') . 'へのお問い合わせ'); ?>&body=<?php echo urlencode('内容は端的にお願い致します'); ?>" target="_blank">Contact</a>
         </nav>
+		
     </header>
     <main>
-        <p class="category"><?php echo $category; ?></p>
-        <h1 class="title"><?php the_title(); ?></h1>
-        <p class="author"><?php the_author(); ?></p>
-
-        <?php the_content('.content'); ?>
+		<div class="title">			
+	        <p class="category left"><?php echo $category; ?></p>
+	        <h1 class="title center"><?php the_title(); ?></h1>
+	        <p class="author right"><?php echo $author; ?></p>
+		</div>
+        <div class="content">
+	        <?php the_content(); ?>			
+		</div>
 
        <?php if (is_active_sidebar('main_widget')) : ?>
            <?php dynamic_sidebar('main_widget'); ?>
@@ -51,7 +62,10 @@ $home = esc_url(home_url('/'));
 
     </main>
     <footer>
-        <p class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+		<nav class="small right">
+            <a class="home" href="<?php echo $home; ?>">一覧に戻る</a>			
+		</nav>		
+        <p class="copyright center small">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
     </footer>
     <?php wp_footer(); ?>
 </body>

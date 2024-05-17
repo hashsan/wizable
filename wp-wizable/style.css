@@ -9,3 +9,99 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: minimal-theme
 */
+
+@import url('https://hashsan.github.io/wizable/unicornHead.css');
+@import url('https://hashsan.github.io/wizable/fullback.css');
+@import url('https://hashsan.github.io/wizable/beautyFade.css');
+
+
+*{box-sizing:border-box;}
+body{
+  background:#111;
+  color:#fff;
+  
+  max-width:500px;
+  margin:auto;
+  line-height:1.5;
+  padding:0 1rem;
+}
+h1,h2,h3,h4,h5{
+  color:#ccc;
+  margin:3rem 0 1rem 0;
+  font-weight:bold;
+}
+.title,
+h1{
+  margin-bottom:3rem;
+}
+
+h1{
+  font-size:2rem;
+}
+h2{
+  font-size:1.5rem;
+}
+h3,h4,h5{
+  font-size:1.2rem;
+}
+
+mark,em,strong{
+  font-weight:bold;
+}
+p{
+  color:#fff;
+  margin:1rem 0;
+}
+a{
+  color:#fff;
+  text-decoration:underline;
+}
+a:visited{
+  color:#a3a;
+}
+a:hover,a:focus{
+  opacity:0.8;
+}
+
+.row{
+  display:flex;
+  gap:0.5rem;
+  justify-content:center;
+}
+.r,
+.right{
+  text-align:right;
+}
+.c,
+.center{
+  text-align:center;
+}
+.l,
+.left{
+  text-align:left;  
+}
+
+.small{
+  font-size:0.8rem;
+}
+
+header,footer,main,.content{
+  margin:3rem 0;
+}
+img{
+  width:100%;
+}
+main img,article img{
+  display:flex;
+  margin:3rem auto;
+  width:200px;
+  height:200px;
+  object-fit:cover;
+  filter:grayscale(100%);
+  border-radius:4px;
+  cursor:pointer;
+}
+
+header a:visited, footer a:visited {
+    color: inherit;
+}
