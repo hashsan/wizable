@@ -68,6 +68,12 @@ a:hover,a:focus{
   gap:0.5rem;
   justify-content:center;
 }
+.col{
+  display:flex;
+  gap:0.5rem;
+  flex-direction:column;
+}
+
 .r,
 .right{
   text-align:right;
